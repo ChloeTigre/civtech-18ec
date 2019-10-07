@@ -1,0 +1,28 @@
+version: "3"
+services:
+  traefik:
+    image: "traefik:v2.0.0-rc3"
+    container_name: "traefik"
+    command:
+    - "--api.insecure=true"
+    - "--providers.docker=true"
+    - "--providers.docker.exposedbydefault=true"
+    - "--entrypoints.web.address=:80"
+    ports:
+    - "80:80"
+    - "8080:8080"
+    volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
+  decidim:
+    image: l18ec:latest
+    labels:
+    - "traefik.enable=true"
+    - "traefik.port=80"
+    - "traefik.http.routers.decidim.rule=HostRegexp(`.*\.le18encommun\.fr`)"
+    - "traefik.http.routers.whoami.entrypoints=web"
+    volumes:
+    - "./assets-cache:/opt/decidim/L18eC/public/assets/"
+
+
+
