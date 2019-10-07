@@ -1,0 +1,17 @@
+# decidim
+
+Decidim est un framework permettant de construire une application participative.
+
+Je décide de livrer une première version de notre plate-forme Decidim configurée
+de la façon suivante:
+
+Modules:
+* Admin (gérer techniquement la plate-forme)
+* Accountability (transparence sur les résultats)
+* API (encourager des développeurs à expérimenter autour des usages)
+* Initiatives (initiatives citoyennes)
+* Surveys (questions posées, créées par un admin)
+* Proposals (propositions des usagers en réponse aux grands sujets lancés)
+
+
+
