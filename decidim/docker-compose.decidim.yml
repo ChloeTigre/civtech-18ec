@@ -19,7 +19,7 @@ services:
     labels:
     - "traefik.enable=true"
     - "traefik.port=80"
-    - "traefik.http.routers.decidim.rule=HostRegexp(`.*\.le18encommun\.fr`)"
+    - 'traefik.http.routers.decidim.rule=HostRegexp(`.*\.le18encommun\.fr`)'
     - "traefik.http.routers.whoami.entrypoints=web"
     volumes:
     - "./assets-cache:/opt/decidim/L18eC/public/assets/"
