@@ -1,0 +1,9 @@
+deploy_passenger() {
+if [ ! -f /etc/nginx/modules-enabled/50-mod-http-passenger.conf ]; then
+    ln -s /usr/share/nginx/modules-available/mod-http-passenger.load /etc/nginx/modules-enabled/50-mod-http-passenger.conf
+fi
+
+sed -i 's@^passenger_ruby.*@@g' /etc/nginx/conf.d/mod-http-passenger.conf
+echo 'passenger_ruby /opt/decidim/.rbenv/shims/ruby;' >> /etc/nginx/conf.d/mod-http-passenger.conf
+nginx -t
+}

@@ -1,0 +1,8 @@
+create_decidim_app() {
+    sudo -u decidim bash - <<EOF
+    source ~/.bashrc
+    cd
+    decidim L18eC
+EOF
+}
+

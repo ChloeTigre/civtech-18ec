@@ -1,0 +1,3 @@
+dummy_test() {
+    echo "not a dummy"
+}

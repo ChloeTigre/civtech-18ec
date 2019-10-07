@@ -1,0 +1,9 @@
+create_postgresql_account() {
+    echo "Login: decidim_app"
+    echo "Password: contents of DECIDIM_PG_PASSWD env var"
+    echo "If you're unhappy with this, feel free to drop that account and"
+    echo "change DATABASE_URL in config/application.yml"
+    /etc/init.d/postgresql start
+    sudo -u postgres psql -q -c "CREATE USER decidim_app WITH SUPERUSER CREATEDB NOCREATEROLE PASSWORD '${DECIDIM_PG_PASSWD}'"
+}
+

@@ -1,0 +1,12 @@
+generate_application_yml() {
+    sudo -u decidim bash <<EOF
+    source ~/.bashrc
+    cd ~/L18eC
+    mkdir -p config
+    echo DATABASE_URL: postgres://decidim_app:${DECIDIM_PG_PASSWD}@localhost/decidim_l18ec > config/application.yml
+    echo -n "SECRET_KEY_BASE: "  >> config/application.yml
+    rake secret >> config/application.yml
+EOF
+}
+
+

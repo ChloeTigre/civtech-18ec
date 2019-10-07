@@ -1,0 +1,14 @@
+install_rbenv() {
+    sudo -u decidim bash - <<'EOF'
+        git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+        echo 'export PATH="/opt/decidim/.rbenv/bin:$PATH"' > ~/.bashrc
+        echo 'eval "$(~/.rbenv/bin/rbenv init -)"' >> ~/.bashrc
+        source ~/.bashrc
+EOF
+    sudo -u decidim bash - <<'EOF'
+        git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+EOF
+}
+
+
+

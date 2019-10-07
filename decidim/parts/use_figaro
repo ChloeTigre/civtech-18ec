@@ -1,0 +1,15 @@
+use_figaro() {
+    sudo -u decidim bash <<'EOF'
+    cd ~/L18eC
+    # add 'gem "figaro"' before the first group
+    sed -i '0,/^group/{s/^group/gem "figaro"\ngroup/g}' Gemfile
+    cat >> Gemfile <<EOG
+group :production do
+  gem "passenger"
+  gem 'delayed_job_active_record'
+  gem "daemons"
+end
+EOG
+EOF
+}
+

@@ -1,0 +1,7 @@
+install_decidim_gem() {
+    sudo -u decidim bash <<'EOF'
+    source ~/.bashrc
+    gem install decidim
+EOF
+}
+

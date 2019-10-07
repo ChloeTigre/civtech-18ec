@@ -1,0 +1,8 @@
+start_tracking_changes() {
+    sudo -u decidim bash <<'EOF'
+    cd ~/L18eC
+    [ ! -d .git ] && echo "You should version this"
+    echo "."
+EOF
+}
+

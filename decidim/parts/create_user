@@ -1,0 +1,6 @@
+create_user() {
+    getent passwd decidim && return
+    useradd -d /opt/decidim -m -s /bin/sh -U -r decidim
+}
+
+

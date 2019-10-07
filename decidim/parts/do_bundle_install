@@ -1,0 +1,8 @@
+do_bundle_install() {
+    sudo -u decidim bash <<'EOF'
+    source ~/.bashrc
+    cd ~/L18eC
+    bundle install
+EOF
+}
+

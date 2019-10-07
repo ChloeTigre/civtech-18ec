@@ -1,0 +1,13 @@
+config_rbenv() {
+    sudo -u decidim bash - <<'EOF'
+        source ~/.bashrc
+        rbenv install 2.6.3
+        rbenv global 2.6.3
+EOF
+    sudo -u decidim bash - <<'EOF'
+    source ~/.bashrc
+    echo "gem: --no-document" > ~/.gemrc
+    gem install bundler
+EOF
+}
+

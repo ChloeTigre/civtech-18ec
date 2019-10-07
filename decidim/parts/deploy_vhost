@@ -1,0 +1,21 @@
+deploy_vhost() {
+rm -f /etc/nginx/sites-enabled/*
+cat > /etc/nginx/sites-enabled/decidim <<'EOF'
+server {
+    listen 80;
+    listen [::]:80 ipv6only=on;
+
+    server_name _;
+    client_max_body_size 32M;
+
+    passenger_enabled on;
+    passenger_ruby /opt/decidim/.rbenv/shims/ruby;
+
+    rails_env    production;
+    root         /opt/decidim/L18eC/public;
+}
+
+EOF
+
+nginx -t
+}
