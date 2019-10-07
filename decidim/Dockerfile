@@ -36,3 +36,6 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT /entrypoint.sh
+
+EXPOSE 80
+CMD "while sleep 10; do ps -ef; done"

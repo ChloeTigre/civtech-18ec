@@ -32,4 +32,5 @@ postgres_start
 create_db
 nginx_start
 
-exec $@
+$@
+while sleep 60; do echo -n .; done
