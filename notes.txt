@@ -13,5 +13,4 @@ Modules:
 * Surveys (questions posées, créées par un admin)
 * Proposals (propositions des usagers en réponse aux grands sujets lancés)
 
-
-
+Le travail se trouvera dans le dossier decidim.
